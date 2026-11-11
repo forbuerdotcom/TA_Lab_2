@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import ttk, messagebox
+from models import WallPaper, Tile, Laminate
 
 root = tk.Tk()
 root.title("Вариант №10. Отделочные материалы")
