@@ -1,6 +1,7 @@
 import tkinter as tk
-from tkinter import ttk, messagebox
+from tkinter import ttk, messagebox, filedialog
 from models import WallPaper, Tile, Laminate
+from reporter import save_report_to_word
 
 root = tk.Tk()
 root.title("Вариант №10. Отделочные материалы")
@@ -26,7 +27,7 @@ def calculateSomething():
 
         quantity = material_obj.calculate_quantity()
         unit = material_obj.get_unit()
-        price = material_obj.get_price()
+        total_cost = material_obj.get_price()
 
         resultText.insert(tk.END, "    РЕЗУЛЬТАТ РАСЧЕТА    \n\n")
         resultText.insert(tk.END, f"Материал: {material_str}\n")
@@ -38,6 +39,32 @@ def calculateSomething():
 
     except ValueError as e:
         messagebox.showerror("Ошибка ввода", f"Некорректные данные!\n\n{e}")
+
+def saveReportForNow():
+    text_to_save = resultText.get("1.0", tk.END)
+
+    if not text_to_save.strip():
+        messagebox.showwarning("Внимание","Сначала нажмите на кнопку рассчитать")
+        return
+
+    filepath = filedialog.asksaveasfilename(
+        title="Сохранить отчет:",
+        defaultextension=".docx",
+        filetypes = [("Word Document", "*.docx")]
+    )
+
+    if filepath:
+        try:
+            save_report_to_word(filepath, text_to_save)
+            messagebox.showinfo("Успех", "Отчет успешно сохранен в Word!")
+        except Exception as e:
+            messagebox.showerror("Ошибка", f"Не удалось сохранить файл:\n{e}")
+
+
+
+
+
+
 
 squareMetersLabel = tk.Label(root, text="Площадь помещения (кв.м):", font=("Arial", 14))
 squareMetersLabel.place(relx=0.04,rely=0.04)
@@ -56,7 +83,7 @@ valueForUnitEntity.place(relx=0.25,rely=0.24)
 
 сalculateSomethingButton = tk.Button(root, text="РАССЧИТАТЬ", font=("Arial",14), command=calculateSomething)
 сalculateSomethingButton.place(relx=0.07,rely=0.35)
-saveReportButton = tk.Button(root, text="СОХРАНИТЬ ОТЧЕТ", font=("Arial",14))
+saveReportButton = tk.Button(root, text="СОХРАНИТЬ ОТЧЕТ", font=("Arial",14), command=saveReportForNow)
 saveReportButton.place(relx=0.23,rely=0.35)
 
 resultText = tk.Text(root, font=("Arial", 14))

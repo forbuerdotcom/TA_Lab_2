@@ -63,3 +63,5 @@ class Laminate(Entity):
 
     def get_unit(self) -> str:
         return "кв.м"
+
+
