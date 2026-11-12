@@ -7,16 +7,37 @@ root.title("Вариант №10. Отделочные материалы")
 root.geometry("1180x640")
 
 def calculateSomething():
-    area = squareMetersEntity.get()
-    material = typeMaterialCombobox.get()
-    price = valueForUnitEntity.get()
+    area_str = squareMetersEntity.get()
+    material_str = squareMetersEntity.get()
+    price_str = squareMetersEntity.get()
 
-    resultText.delete(1.0, tk.END)
+    resultText.delete("1.0", tk.END)
 
-    resultText.insert(tk.END, "     ДАННЫЕ УСПЕШНО! ПОСЧИТАНЫ     \n")
-    resultText.insert(tk.END, f"Площадь: {area}\n")
-    resultText.insert(tk.END, f"Материал: {material}\n")
-    resultText.insert(tk.END, f"Цена: {price}\n")
+    try:
+        area = float(area_str)
+        price = float(price_str)
+
+        if material_str == "Обои":
+            material_obj = WallPaper(area, price)
+        elif material_str == "Плитка":
+            material_obj = Tile(area, price)
+        else:
+            material_obj = Laminate(area, price)
+
+        quantity = material_obj.calculate_quantity()
+        unit = material_obj.get_unit()
+        price = material_obj.get_price()
+
+        resultText.insert(tk.END, "    РЕЗУЛЬТАТ РАСЧЕТА    \n\n")
+        resultText.insert(tk.END, f"Материал: {material_str}\n")
+        resultText.insert(tk.END, f"Площадь: {area} кв.м.\n")
+        resultText.insert(tk.END, f"Цена за 1 ед.: {price} руб.\n")
+        resultText.insert(tk.END, "-" * 85 + "\n")
+        resultText.insert(tk.END, f"Нужно купить: {quantity:.2f} {unit}\n")
+        resultText.insert(tk.END, f"ИТОГО К ОПЛАТЕ: {total_cost:.2f} руб.\n")
+
+    except ValueError as e:
+        messagebox.showerror("Ошибка ввода", f"Некорректные данные!\n\n{e}")
 
 squareMetersLabel = tk.Label(root, text="Площадь помещения (кв.м):", font=("Arial", 14))
 squareMetersLabel.place(relx=0.04,rely=0.04)
