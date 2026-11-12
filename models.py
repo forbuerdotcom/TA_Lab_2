@@ -43,7 +43,8 @@ class Entity(ABC):
 class WallPaper(Entity):
     def calculate_quantity(self) -> float:
         area_with_waste = self.area * 1.1
-        return float(math.ceil(area_with_waste / 5))
+        rolls = round(area_with_waste / 5, 2)
+        return float(math.ceil(rolls))
 
     def get_unit(self) -> str:
         return "рулонов"
