@@ -8,8 +8,8 @@ root.geometry("1180x640")
 
 def calculateSomething():
     area_str = squareMetersEntity.get()
-    material_str = squareMetersEntity.get()
-    price_str = squareMetersEntity.get()
+    material_str = typeMaterialCombobox.get()
+    price_str = valueForUnitEntity.get()
 
     resultText.delete("1.0", tk.END)
 
