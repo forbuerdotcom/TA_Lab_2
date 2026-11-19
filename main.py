@@ -1,7 +1,10 @@
 import tkinter as tk
 from tkinter import ttk, messagebox, filedialog
-from models import WallPaper, Tile, Laminate
-from reporter import save_report_to_word
+from materials_package import WallPaper, Tile, Laminate
+from materials_package import save_report_to_word
+from materials_package import init_db, save_calculation
+
+init_db()
 
 root = tk.Tk()
 root.title("Вариант №10. Отделочные материалы")
@@ -36,6 +39,8 @@ def calculateSomething():
         resultText.insert(tk.END, "-" * 85 + "\n")
         resultText.insert(tk.END, f"Нужно купить: {quantity:.2f} {unit}\n")
         resultText.insert(tk.END, f"ИТОГО К ОПЛАТЕ: {total_cost:.2f} руб.\n")
+
+        save_calculation(material_str, area, price, quantity, total_cost)
 
     except ValueError as e:
         messagebox.showerror("Ошибка ввода", f"Некорректные данные!\n\n{e}")
@@ -81,8 +86,8 @@ valueForUnitLabel.place(relx=0.04,rely=0.24)
 valueForUnitEntity = tk.Entry(root,  font=("Arial", 14))
 valueForUnitEntity.place(relx=0.25,rely=0.24)
 
-сalculateSomethingButton = tk.Button(root, text="РАССЧИТАТЬ", font=("Arial",14), command=calculateSomething)
-сalculateSomethingButton.place(relx=0.07,rely=0.35)
+calculateSomethingButton = tk.Button(root, text="РАССЧИТАТЬ", font=("Arial",14), command=calculateSomething)
+calculateSomethingButton.place(relx=0.07,rely=0.35)
 saveReportButton = tk.Button(root, text="СОХРАНИТЬ ОТЧЕТ", font=("Arial",14), command=saveReportForNow)
 saveReportButton.place(relx=0.23,rely=0.35)
 

@@ -1,5 +1,5 @@
 import pytest
-from models import WallPaper, Tile, Laminate
+from materials_package.models import WallPaper, Tile, Laminate
 
 
 def test_wallpaper_calculation():

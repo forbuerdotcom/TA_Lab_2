@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
 import math
 
+
 class Entity(ABC):
     def __init__(self, area: float, price: float):
         self.area = area
@@ -13,7 +14,7 @@ class Entity(ABC):
     @area.setter
     def area(self, value):
         if value <= 0:
-            raise ValueError("Плозадь должна быть больше 0!")
+            raise ValueError("Площадь должна быть больше 0!")  # Исправил опечатку
         self._area = value
 
     @property
@@ -26,10 +27,8 @@ class Entity(ABC):
             raise ValueError("Цена не может быть отрицательной!")
         self._price = value
 
-
-
     @abstractmethod
-    def calculate_quantity(self) ->float:
+    def calculate_quantity(self) -> float:
         pass
 
     @abstractmethod
@@ -38,6 +37,13 @@ class Entity(ABC):
 
     def get_price(self) -> float:
         return self.calculate_quantity() * self.price
+
+    # DUNDER
+    def __str__(self) -> str:
+        return f"{self.__class__.__name__}: Площадь = {self.area} кв.м, Цена = {self.price} руб."
+
+    def __repr__(self) -> str:
+        return f"{self.__class__.__name__}(area={self.area}, price={self.price})"
 
 
 class WallPaper(Entity):
@@ -49,6 +55,14 @@ class WallPaper(Entity):
     def get_unit(self) -> str:
         return "рулонов"
 
+    # DUNDER
+    def __str__(self) -> str:
+        return f"Обои (Площадь: {self.area} кв.м, Цена за рулон: {self.price} руб.)"
+
+    def __repr__(self) -> str:
+        return f"WallPaper(area={self.area}, price={self.price})"
+
+
 class Tile(Entity):
     def calculate_quantity(self) -> float:
         area_with_waste = self.area * 1.05
@@ -56,6 +70,14 @@ class Tile(Entity):
 
     def get_unit(self) -> str:
         return "кв.м"
+
+    # DUNDER
+    def __str__(self) -> str:
+        return f"Плитка (Площадь: {self.area} кв.м, Цена за кв.м: {self.price} руб.)"
+
+    def __repr__(self) -> str:
+        return f"Tile(area={self.area}, price={self.price})"
+
 
 class Laminate(Entity):
     def calculate_quantity(self) -> float:
@@ -65,4 +87,9 @@ class Laminate(Entity):
     def get_unit(self) -> str:
         return "кв.м"
 
+    # DUNDER
+    def __str__(self) -> str:
+        return f"Ламинат (Площадь: {self.area} кв.м, Цена за кв.м: {self.price} руб.)"
 
+    def __repr__(self) -> str:
+        return f"Laminate(area={self.area}, price={self.price})"
