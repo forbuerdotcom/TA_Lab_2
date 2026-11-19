@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b29414c3-3e67-4f8e-8be3-effdcf712455" name="Changes" comment="bugfix + database.py">
-      <change afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+    <list default="true" id="b29414c3-3e67-4f8e-8be3-effdcf712455" name="Changes" comment="docker">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_modules.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_modules.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,12 +69,15 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Предметы 5 семестр\Лисничук\TA_Lab_2" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Предметы 5 семестр\Лисничук\TA_Lab_2" />
       <recent name="D:\Предметы 5 семестр\Лисничук\TA_Lab_2\materials_package" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="TA_Lab_2" />
       <option name="ENV_FILES" value="" />
@@ -226,7 +229,15 @@
       <option name="project" value="LOCAL" />
       <updated>1795050706474</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="docker">
+      <option name="closed" value="true" />
+      <created>1795056431777</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1795056431777</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,6 +251,7 @@
     <MESSAGE value="ReportUpdate" />
     <MESSAGE value="testUpdate" />
     <MESSAGE value="bugfix + database.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="bugfix + database.py" />
+    <MESSAGE value="docker" />
+    <option name="LAST_COMMIT_MESSAGE" value="docker" />
   </component>
 </project>
