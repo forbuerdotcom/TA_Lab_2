@@ -4,17 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b29414c3-3e67-4f8e-8be3-effdcf712455" name="Changes" comment="testUpdate">
-      <change afterPath="$PROJECT_DIR$/materials_package/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/materials_package/database.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/TA_Lab_2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TA_Lab_2.iml" afterDir="false" />
+    <list default="true" id="b29414c3-3e67-4f8e-8be3-effdcf712455" name="Changes" comment="bugfix + database.py">
+      <change afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/materials_package/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reporter.py" beforeDir="false" afterPath="$PROJECT_DIR$/materials_package/reporter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_modules.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_modules.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +74,7 @@
       <recent name="D:\Предметы 5 семестр\Лисничук\TA_Lab_2\materials_package" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.main">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="TA_Lab_2" />
       <option name="ENV_FILES" value="" />
@@ -225,7 +218,15 @@
       <option name="project" value="LOCAL" />
       <updated>1794917531385</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="bugfix + database.py">
+      <option name="closed" value="true" />
+      <created>1795050706473</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1795050706474</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -238,6 +239,7 @@
     <MESSAGE value="update2" />
     <MESSAGE value="ReportUpdate" />
     <MESSAGE value="testUpdate" />
-    <option name="LAST_COMMIT_MESSAGE" value="testUpdate" />
+    <MESSAGE value="bugfix + database.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="bugfix + database.py" />
   </component>
 </project>

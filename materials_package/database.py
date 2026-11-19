@@ -1,7 +1,6 @@
 import sqlite3
 
 def init_db():
-    """Создает файл базы данных и таблицу, если их еще нет."""
     with sqlite3.connect('calculations.db') as conn:
         cursor = conn.cursor()
         cursor.execute('''
@@ -32,6 +31,4 @@ def save_calculation(material: str, area: float, price: float, quantity: float, 
     # Фиксируем изменения и ОБЯЗАТЕЛЬНО закрываем файл
     conn.commit()
     conn.close()
-
-    # Этот print появится в терминале (внизу), если запись прошла успешно
     print(f"DEBUG: Успешно сохранено в БД! {material}, {area}, {price}")
